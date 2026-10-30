@@ -25,7 +25,7 @@ test('never include a visitor question or identity in share payload',()=>{
  assert.equal(Object.keys(r).includes('question'),false);
 });
 test('invalid, changed, future or unsupported records fail closed',()=>{
- for(const record of [null,{...sample,district:'Other'},{...sample,sourceUrl:'https://evil.test/flood'},{...sample,updatedDate:'2027-01-01'},{...sample,sourceReviewDate:'2027-01-01'},{...sample,sourceReviewDate:''}]){
+ for(const record of [null,{...sample},{...sample,district:'Other'},{...sample,sourceUrl:'https://evil.test/flood'},{...sample,updatedDate:'2027-01-01'},{...sample,sourceReviewDate:'2027-01-01'},{...sample,sourceReviewDate:''}]){
   assert.equal(buildShareNote(record,'en',now).kind,'unavailable');
  }
 });
