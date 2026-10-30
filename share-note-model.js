@@ -30,7 +30,7 @@ export function buildShareNote(record = historicalBulletins[0], language = 'bn',
   const t = translations[language === 'en' ? 'en' : 'bn'];
   if (!record || record.district !== 'Sunamganj' || !safeOfficialUrl(record.sourceUrl) ||
       assessHistoricalBulletin(record, now) === 'unavailable' ||
-      !record.sourceReviewDate || !/^\\d{4}-\\d{2}-\\d{2}$/.test(record.sourceReviewDate) ||
+      !record.sourceReviewDate || !/^\d{4}-\d{2}-\d{2}$/.test(record.sourceReviewDate) ||
       Date.parse(record.sourceReviewDate + 'T00:00:00Z') > now) {
     return {kind:'unavailable', title:t.title, text:''};
   }
@@ -41,5 +41,5 @@ export function buildShareNote(record = historicalBulletins[0], language = 'bn',
     t.source + ': ' + record.sourceUrl,
     t.current + ': ' + currentInformationUrl
   ];
-  return {kind:'ready', title:t.title, text:lines.join('\\n'), sourceUrl:record.sourceUrl, currentInformationUrl};
+  return {kind:'ready', title:t.title, text:lines.join('\n'), sourceUrl:record.sourceUrl, currentInformationUrl};
 }
