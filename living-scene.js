@@ -1,3 +1,9 @@
+const recorded=document.querySelector('[data-living]');
+if(recorded){
+ const live=document.createElement('section'); live.className='scene-stage'; live.dataset.scene='water'; live.setAttribute('aria-labelledby','scene-title');
+ live.innerHTML='<div class="scene-copy"><p class="scene-kicker">BONNA-SOTORKO-BD / INTERACTIVE SCENE</p><h1 id="scene-title">Water moves, <em>be ready.</em></h1><p>Enter the river information scene. Open official sources and prepare your household without inventing live warnings.</p><div class="scene-controls"><a class="film-cta" href="#main">Find official information <span aria-hidden="true">↗</span></a><button type="button" data-motion-toggle aria-pressed="true">Pause scene</button><label>Scene progress<input data-growth type="range" min="0" max="100" value="60" aria-label="Scene progress"></label><span data-growth-label role="status">Live scene</span></div></div><div class="scene-view"><canvas aria-label="Interactive water scene"></canvas><div class="scene-fallback" hidden><p>Interactive scene unavailable. Use the tools below.</p></div></div>';
+ recorded.replaceWith(live); import('./scene.js');
+}
 const scene=document.querySelector('[data-living]');
 if(scene){
  const video=scene.querySelector('video'),button=scene.querySelector('[data-film-toggle]'),status=scene.querySelector('[data-film-status]'),progress=scene.querySelector('[data-film-progress]');
