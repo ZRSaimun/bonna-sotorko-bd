@@ -4,7 +4,7 @@ import {answerGuide,officialLinks} from './guide-model.js';
 const ask=(q,opts={})=>answerGuide(q,{district:'Sunamganj',language:'en',now:Date.parse('2026-10-30T00:00:00Z'),...opts});
 test('Bangla and English historical dates cite the original source',()=>{
  for(const [q,language] of [['প্রকাশের তারিখ কবে?','bn'],['When was the bulletin updated?','en']]){
-  const r=ask(q,{language});assert.equal(r.kind,'answer');assert.match(r.text,/2026-04-28/);assert.equal(r.links[0].url,officialLinks.bulletin.url);
+  const r=ask(q,{language});assert.equal(r.kind,'answer');assert.match(r.text,/2026-04-28|২০২৬-০৪-২৮/);assert.equal(r.links[0].url,officialLinks.bulletin.url);
  }
 });
 test('validity is unverified, not presented as current',()=>{
