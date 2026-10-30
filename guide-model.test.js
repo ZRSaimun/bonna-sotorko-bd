@@ -1,3 +1,4 @@
+import {execFileSync} from 'node:child_process';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {answerGuide,officialLinks} from './guide-model.js';
@@ -32,4 +33,8 @@ test('all offered URLs are explicit HTTPS official destinations',()=>{
  for(const q of ['Where is the PDF?','Is it safe today?','What is the date?']){
   for(const l of ask(q).links){const u=new URL(l.url);assert.equal(u.protocol,'https:');assert.ok(['www.bamis.gov.bd','ffwc.gov.bd','bmd.gov.bd'].includes(u.hostname));}
  }
+});
+
+test('browser guide module parses',()=>{
+  execFileSync(process.execPath,['--check','guide.js']);
 });
