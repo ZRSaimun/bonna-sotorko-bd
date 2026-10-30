@@ -1,4 +1,4 @@
-import {historicalBulletins, assessHistoricalBulletin, safeOfficialUrl} from './historical-model.js';
+import {historicalBulletins, assessHistoricalBulletin, safeOfficialUrl, dayMillis} from './historical-model.js';
 
 // This text is deliberately fixed to editorial metadata, never user chat or live hazard data.
 const currentInformationUrl = 'https://ffwc.gov.bd/';
@@ -28,10 +28,11 @@ const translations = Object.freeze({
 });
 export function buildShareNote(record = historicalBulletins[0], language = 'bn', now = Date.now()) {
   const t = translations[language === 'en' ? 'en' : 'bn'];
-  if (!record || record.district !== 'Sunamganj' || !safeOfficialUrl(record.sourceUrl) ||
+  if (record !== historicalBulletins[0] || !record || record.district !== 'Sunamganj' || !safeOfficialUrl(record.sourceUrl) ||
       assessHistoricalBulletin(record, now) === 'unavailable' ||
-      !record.sourceReviewDate || !/^\d{4}-\d{2}-\d{2}$/.test(record.sourceReviewDate) ||
-      Date.parse(record.sourceReviewDate + 'T00:00:00Z') > now) {
+      record.validUntil !== null || dayMillis(record.sourceReviewDate) === null ||
+      dayMillis(record.sourceReviewDate) < dayMillis(record.updatedDate) ||
+      dayMillis(record.sourceReviewDate) > now) {
     return {kind:'unavailable', title:t.title, text:''};
   }
   const lines = [
