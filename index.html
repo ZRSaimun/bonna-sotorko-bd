@@ -1,2 +1,89 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Check official flood sources and keep a household preparation checklist."><title>বন্যাসতর্ক | Clear information. Careful preparation.</title><link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./living-scene.css?v=2"></head><body><a class="skip" href="#main">Skip to content</a><header><strong lang="bn">বন্যাসতর্ক</strong><span class="eyebrow">Bangladesh · Early prototype</span></header><main id="main"><section class="living-scene" data-living="water" aria-label="Water scene"><div class="film-media"><img src="./living-poster.jpg" alt="" aria-hidden="true" width="1280" height="720" fetchpriority="high"><video data-src="./living-scene.mp4" poster="./living-poster.jpg" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"></video></div><div class="film-topline"><span>02 / UNDERSTAND THE RIVER</span><span><i class="film-dot" aria-hidden="true"></i> RECORDED SCENE</span></div><div class="film-copy"><p class="film-kicker">BONNASOTORKO / BANGLADESH</p><h1>Water moves.<br><em>Be ready.</em></h1><p class="film-intro">Stay close to official information. Make a household plan before the water rises.</p><a class="film-cta" href="#district">Find official information<span aria-hidden="true">↗</span></a></div><div class="film-footer"><p class="film-credit">Recorded Bangladesh river footage · not a live flood report<br>Film: <a href="https://www.pexels.com/video/serene-river-boat-ride-in-bangladesh-35892436/" target="_blank" rel="noopener noreferrer">Rafi Uddin / Pexels</a></p><div class="film-controls"><span class="film-status" data-film-status role="status">Scene paused</span><button type="button" data-film-toggle aria-pressed="false">Play scene</button></div></div><div class="film-progress" aria-hidden="true"><span data-film-progress></span></div></section><section class="panel"><h2>এলাকার তথ্য · Area information</h2><label for="district">District</label><select id="district"><option>Sylhet</option><option>Sunamganj</option><option>Kurigram</option><option>Other district</option></select><div id="status" class="notice" role="status"></div><p>No feed is connected. Missing data does not mean there is no flood risk. This site cannot establish safe roads, safe shelter locations or household flood depth.</p><div class="actions"><a href="https://ffwc.gov.bd/">Open official FFWC information</a><a href="https://rapid.ddm.gov.bd/home/weather/">Open DDM warnings</a></div></section><section class="panel"><h2>পুরোনো হাওর বার্তার উদাহরণ · Historical reference</h2><p>Read a dated BAMIS source and see why an April 2026 bulletin must not be treated as a current warning.</p><a href="./historical.html">Open the historical bulletin reference</a></section><section class="panel"><h2>পরিবারের প্রস্তুতি · Household planning</h2><p>A general planning aid, not an evacuation instruction. Follow current directions from local authorities.</p><div id="checks"></div><p id="progress" role="status"></p><button id="reset" class="secondary">Clear progress</button><p id="storage" role="status"></p></section><noscript><p class="notice">Interactive features require JavaScript. Official links remain available.</p></noscript></main><footer><p>Independent prototype. Not a government service. Progress, where saved, stays in this browser; no account or document upload is needed.</p><a href="https://github.com/ZRSaimun/bonna-sotorko-bd/issues/new">Report a problem on GitHub</a><p>Reports are public. Do not include identity numbers, documents, private contact details or other sensitive information.</p></footer><script type="module" src="./app.js"></script><script type="module" src="./living-scene.js?v=2"></script></body></html>
-
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="বন্যাসতর্ক: সরকারি বন্যা তথ্যের উৎস, পুরোনো বার্তার তারিখ ও পরিবারের প্রস্তুতির তালিকা। কোনো লাইভ সতর্কতা নয়।">
+  <meta name="theme-color" content="#102d38">
+  <title>বন্যাসতর্ক | তথ্যের উৎস আগে, প্রস্তুতি পরে</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">মূল তথ্যে যান</a>
+  <div class="identity-strip"><div class="wrap"><span>বন্যাসতর্ক / BONNA SOTORKO</span><span>স্বতন্ত্র তথ্য-সহায়ক · সরকারি সেবা নয়</span></div></div>
+  <header class="site-header wrap">
+    <a class="brand" href="./index.html" aria-label="বন্যাসতর্ক মূল পাতা"><span class="brand-mark" aria-hidden="true">≋</span><span>বন্যাসতর্ক<small>সূত্র দেখুন। সময় যাচাই করুন।</small></span></a>
+    <nav aria-label="মূল নেভিগেশন">
+      <a href="#sources">সরকারি উৎস</a>
+      <a href="#archive">পুরোনো বার্তা</a>
+      <a href="#prepare">প্রস্তুতির তালিকা</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="opening wrap" aria-labelledby="page-title">
+      <div class="opening-copy">
+        <p class="overline">জনসাধারণের তথ্য ডেস্ক / PUBLIC INFORMATION DESK</p>
+        <h1 id="page-title">আগে উৎস দেখুন।<br><span>তারপর সিদ্ধান্ত নিন।</span></h1>
+        <p class="intro">বন্যা সম্পর্কে তথ্যের উৎস, এলাকা ও তারিখ আলাদা করে বুঝুন। আপনার এলাকার বর্তমান অবস্থা জানতে সরাসরি সরকারি সাইটে যান।</p>
+        <a class="primary-link" href="#sources">সরকারি তথ্য খুঁজুন <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="verification" aria-labelledby="verification-title">
+        <div class="verification-head"><span>তথ্য যাচাই / CHECK BEFORE USE</span><span aria-hidden="true">01—04</span></div>
+        <h2 id="verification-title">এখানে বর্তমান সতর্কতা যাচাই করা যায় না</h2>
+        <p>কোনো সরকারি লাইভ ফিড যুক্ত নেই। তথ্য না পাওয়া মানে বিপদ নেই, এমন নয়।</p>
+        <ol>
+          <li><span>০১</span> <strong>উৎস</strong> <span>কোন কর্তৃপক্ষ প্রকাশ করেছে?</span></li>
+          <li><span>০২</span> <strong>সময়</strong> <span>কখন প্রকাশ ও হালনাগাদ?</span></li>
+          <li><span>০৩</span> <strong>এলাকা</strong> <span>আপনার জেলা বা নদী কি অন্তর্ভুক্ত?</span></li>
+          <li><span>০৪</span> <strong>মেয়াদ</strong> <span>বার্তাটি এখনো প্রযোজ্য কি?</span></li>
+        </ol>
+        <p class="verification-foot">Current status: <strong>Not verified on this website</strong></p>
+      </aside>
+    </section>
+    <div class="rule wrap" aria-hidden="true"><span>OFFICIAL SOURCES</span><span>01 / INFORMATION</span></div>
+    <section class="information wrap" id="sources" aria-labelledby="sources-title">
+      <div class="section-intro">
+        <p class="overline">এলাকা ও সরকারি উৎস</p>
+        <h2 id="sources-title">আপনার এলাকার তথ্য কোথায় পাবেন?</h2>
+        <p>এলাকা বেছে নিলে শুধু সরকারি তথ্য খোঁজার নির্দেশনা দেখানো হবে। এই সাইট কোনো ঝুঁকির মাত্রা, নিরাপদ রাস্তা বা আশ্রয়ের নিশ্চয়তা দেয় না।</p>
+      </div>
+      <div class="source-workspace">
+        <div class="district-lookup">
+          <label for="district">জেলা নির্বাচন করুন <span lang="en">/ District</span></label>
+          <select id="district">
+            <option value="Sylhet">সিলেট / Sylhet</option>
+            <option value="Sunamganj">সুনামগঞ্জ / Sunamganj</option>
+            <option value="Kurigram">কুড়িগ্রাম / Kurigram</option>
+            <option value="Other district">অন্য জেলা / Other district</option>
+          </select>
+          <div id="status" class="source-status" role="status" aria-live="polite"></div>
+          <p class="quiet">জেলা নির্বাচন করলে কোনো লাইভ সরকারি তথ্য আনা হয় না। সরকারি সাইটে গিয়ে প্রকাশের সময় ও এলাকার নাম মিলিয়ে নিন।</p>
+        </div>
+        <div class="official-links" aria-label="সরকারি তথ্যের ওয়েবসাইট">
+          <a href="https://ffwc.gov.bd/" target="_blank" rel="noopener noreferrer"><span><strong>FFWC / BWDB</strong><small>বন্যা পূর্বাভাস ও নদীর তথ্য</small></span><span aria-hidden="true">↗</span></a>
+          <a href="https://rapid.ddm.gov.bd/home/weather/" target="_blank" rel="noopener noreferrer"><span><strong>DDM</strong><small>দুর্যোগ সংক্রান্ত সরকারি তথ্য</small></span><span aria-hidden="true">↗</span></a>
+          <a href="https://www.bamis.gov.bd/en/page/alert/latest/" target="_blank" rel="noopener noreferrer"><span><strong>BAMIS</strong><small>কৃষি আবহাওয়ার বার্তা</small></span><span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="archive-band" id="archive" aria-labelledby="archive-title">
+      <div class="wrap archive-layout">
+        <div class="archive-date"><span>ARCHIVE / NOT CURRENT</span><strong>04<span>/</span>2026</strong><small>ঐতিহাসিক উদাহরণ</small></div>
+        <div class="archive-copy"><p class="overline">পুরোনো বার্তা বোঝার অনুশীলন</p><h2 id="archive-title">এপ্রিলের একটি বার্তা আজকের সতর্কতা নয়।</h2><p>সুনামগঞ্জের একটি পুরোনো BAMIS নথির উৎস, প্রকাশের তারিখ ও অজানা মেয়াদ কীভাবে পড়বেন তা দেখুন। এখানে নতুন কোনো বন্যা সতর্কতা দেওয়া হয় না।</p><a href="./historical.html">পুরোনো নথির বিবরণ পড়ুন <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+    <section class="preparation wrap" id="prepare" aria-labelledby="prepare-title">
+      <div class="section-intro"><p class="overline">পরিবারের প্রস্তুতি / PERSONAL CHECKLIST</p><h2 id="prepare-title">পরিবারের সঙ্গে পরিকল্পনা করুন</h2><p>এটি সাধারণ প্রস্তুতির তালিকা, সরিয়ে নেওয়ার নির্দেশ নয়। স্থানীয় কর্তৃপক্ষের সাম্প্রতিক নির্দেশ মেনে চলুন।</p></div>
+      <div class="checklist-shell">
+        <div class="checklist-heading"><strong>প্রস্তুতির ধাপ</strong><p id="progress" role="status" aria-live="polite"></p></div>
+        <div id="checks" class="checklist-items" lang="en"><p>JavaScript চালু হলে ব্যক্তিগত প্রস্তুতির তালিকা দেখা যাবে।</p></div>
+        <div class="checklist-footer"><button type="button" id="reset" class="secondary">অগ্রগতি মুছুন / Clear progress</button><p id="storage" role="status" aria-live="polite"></p></div>
+        <p class="quiet">অগ্রগতি এই ব্রাউজারে সংরক্ষিত হতে পারে; কোনো অ্যাকাউন্ট বা পরিচয়পত্র লাগে না। শেয়ার করা ডিভাইসে কাজ শেষে মুছে দিন।</p>
+      </div>
+    </section>
+    <noscript><p class="no-script wrap">JavaScript বন্ধ আছে। সরকারি উৎসের লিংক এবং পুরোনো বার্তার তথ্য ব্যবহার করতে পারবেন; ব্যক্তিগত চেকলিস্ট কাজ করবে না।</p></noscript>
+  </main>
+  <footer class="footer"><div class="wrap"><p><strong>বন্যাসতর্ক</strong> — স্বতন্ত্র শিক্ষামূলক প্রোটোটাইপ। কোনো সরকারি সতর্কতা বা নিরাপত্তা নিশ্চয়তা নয়।</p><p><a href="https://github.com/ZRSaimun/bonna-sotorko-bd/issues/new" target="_blank" rel="noopener noreferrer">ভুল তথ্য জানান / Report a problem</a> · GitHub রিপোর্ট প্রকাশ্য হয়। পরিচয়পত্র, ঠিকানা বা ব্যক্তিগত তথ্য দেবেন না।</p></div></footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
